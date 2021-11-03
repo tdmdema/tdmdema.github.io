@@ -40,6 +40,7 @@ legal:
 
 # Build settings
 theme: jekyll-theme-hydejack
+remote_theme: hydecorp/hydejack
 plugins:
   - jekyll-feed
   - jekyll-avatar
