@@ -1,14 +1,13 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 published: true
 title: Benvenuti
 author:
   display_name: Tommaso De Marchi
   email: tommaso@demarchi.xyz
-  url: https://demarchi.xyz
+  url: 'https://demarchi.xyz'
+slug: benvenuti
+lastmod: '2021-11-15T15:44:39.952Z'
 ---
 
 ## Benvenuti a tutti
