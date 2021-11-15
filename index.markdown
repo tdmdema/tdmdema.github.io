@@ -4,7 +4,7 @@
 
 layout: home
 published: true
-title: Privacy policy
+title: Benvenuti
 author:
   display_name: Tommaso De Marchi
   email: tommaso@demarchi.xyz
