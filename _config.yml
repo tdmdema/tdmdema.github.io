@@ -39,7 +39,7 @@ legal:
     url:  /privacy-policy/
 
 # Build settings
-theme: jekyll-theme-hydejack
+# theme: jekyll-theme-hydejack
 remote_theme: hydecorp/hydejack
 plugins:
   - jekyll-feed
