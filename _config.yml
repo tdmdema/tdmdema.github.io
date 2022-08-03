@@ -56,11 +56,11 @@ menu:
 
 collections:
   featured_categories:
-    permalink:         /:name/
+    permalink:         /:name
     output:            true
-  featured_tags:
-    permalink:         /tag-:name/
-    output:            true
+  # featured_tags:
+  #   permalink:         /:tagname
+  #   output:            true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
