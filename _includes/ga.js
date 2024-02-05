@@ -11,8 +11,8 @@ document.head.appendChild(script); }
 
 /* This is the part where you call the above defined function and "calls back" your code which gets executed after the script has loaded */
 
-loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX', function () {
+loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-SG7PY00SP7', function () {
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true }); })
+gtag('config', 'G-SG7PY00SP7', { 'anonymize_ip': true }); })
