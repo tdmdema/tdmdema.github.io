@@ -56,7 +56,7 @@ comments:
     theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
   staticman:
     branch               : "master"
-    endpoint             : "https://staticman-demarchi-1dbf4e64ccb4.herokuapp.com/v3/entry/github/" # "https://{your Staticman v3 API}/v3/entry/github/"
+    endpoint             : "https://staticman-demarchi-1dbf4e64ccb4.herokuapp.com/v3/entry/github/tdmdema/tdmdema.github.io/gh-pages/comments" # "https://{your Staticman v3 API}/v3/entry/github/"
 reCaptcha:
   siteKey                :
   secret                 :
