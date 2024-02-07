@@ -28,7 +28,7 @@ description              : "Welcome to my personal website. Explore insights abo
 url                      : "https://demarchi.xyz"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "tdmdema/tdmdema.github.io"
-teaser                   : "/assets/images/banner-header.jpg"
+teaser                   : "/assets/images/banner-header.webp"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
@@ -109,7 +109,7 @@ analytics:
 # Site Author
 author:
   name             : "Tommaso De Marchi"
-  avatar           : "/assets/images/me.jpg"
+  avatar           : "/assets/images/me.webp"
   bio              : "I am an **amazing** person."
   location         : "Italy"
   email            : "tommaso@demarchi.xyz"
@@ -298,4 +298,4 @@ defaults:
       share: true
       related: true
       header:
-        image: "/assets/images/banner-header.jpg"
+        image: "/assets/images/banner-header.webp"
