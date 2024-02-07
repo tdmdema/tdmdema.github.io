@@ -31,7 +31,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : " staticman" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : "staticman_v2" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   staticman:
     branch               : "master"
     endpoint             : "https://staticman-demarchi-1dbf4e64ccb4.herokuapp.com/v2/entry/github/tdmdema/tdmdema.github.io/master/comments" # "https://{your Staticman v3 API}/v3/entry/github/"
