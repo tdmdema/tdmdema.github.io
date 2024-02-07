@@ -15,9 +15,6 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 github: [metadata]
 
-# Google Analytics
-google_analytics: G-SG7PY00SP7
-
 # Site Settings
 locale                   : "en-US"
 title                    : "TDM's TechHub"
@@ -35,31 +32,12 @@ breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : " staticman" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
-  disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    # https://developers.facebook.com/docs/plugins/comments
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
-  utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
-  giscus:
-    repo_id              : # Shown during giscus setup at https://giscus.app
-    category_name        : # Full text name of the category
-    category_id          : # Shown during giscus setup at https://giscus.app
-    discussion_term      : # "pathname" (default), "url", "title", "og:title"
-    reactions_enabled    : # '1' for enabled (default), '0' for disabled
-    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
   staticman:
     branch               : "master"
-    endpoint             : "https://staticman-demarchi-1dbf4e64ccb4.herokuapp.com/v3/entry/github/tdmdema/tdmdema.github.io/gh-pages/comments" # "https://{your Staticman v3 API}/v3/entry/github/"
+    endpoint             : "https://staticman-demarchi-1dbf4e64ccb4.herokuapp.com/v2/entry/github/tdmdema/tdmdema.github.io/master/comments" # "https://{your Staticman v3 API}/v3/entry/github/"
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey                : "6Lfi12opAAAAAK52Pne1uXuip_4IdYLI5-1zu6x0"
+  secret                 : "DxRTT0meP0ivhVt6ozjABzY/CR/gziOQ+QSYeu8K3v8OyRk0J6JbcMv04+9cHRgsQAUfiRJGxQvXB2gpVq/Bla/ZKJtAiVQZ12PJIgrrz03g92d+JyoXiBKNXLy6JYZAAT4qv81u+nx2RBrIFIVCjOb3JbVP1PSA9wSoKByqD4VhyL/F+0lNrO1Z3DATMlQRTvPr4gKFfo2obnVz2cz7z2xINHnWnthddQFDyMqD3dOUYIDvDgVpd/ilD1YajIVe5UpXQdVK7phpqmc4pDHjS/YRl0XUt14zNbW/NEoD3iqhvp1DZ+hwdgYj3GrDV5XDL6UadazOpH9YFdpxpJWyROB7J0kmF6UUYmT8QPlR0KsXhKgpBB5hhbcyiJFn9LHmIyfSS/GEScyPFevOBmf1kSsKoIeJpO9umi1i5ohu/kDXWFAhbdKX/AP3bsffwxobULMhpkQTbeDNs/EssT0wU3ANBF2cKWBt+SiE2h8rP02KNn88/1MUdITzt/YJTSk+ULAj+cmrSK3RFNnbTTM4ToK3NuzK4BNqPC80GdG9CeDNVPoVrPnc2wzAejNjbqgoPkq4ytm9l+3QVPTcD9QwXBDYAqSsMsLKc/bdtZ8b0AKuDWbbYsatWG60SVghEnYkbXHEcVWsQ7ERj7jO7dqXLOWFnQYp6JBuPq30gaMKoH0="
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
