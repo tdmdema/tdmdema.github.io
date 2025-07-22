@@ -7,9 +7,10 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
+gem "bundler", "= 2.3.25"
 gem "jekyll"
 
-gem 'activesupport', '< 7.2'
+# gem 'activesupport', '< 7.2'
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 #gem "minima", "~> 2.5"
 #gem "jekyll-theme-hydejack"
