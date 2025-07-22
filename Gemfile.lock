@@ -283,7 +283,7 @@ PLATFORMS
   x86_64-linux-gnu
 
 DEPENDENCIES
-  activesupport (< 7.2)
+  bundler (= 2.3.25)
   csv
   github-pages
   jekyll
@@ -297,4 +297,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.4.19
+   2.3.25
