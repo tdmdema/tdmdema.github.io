@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          <p class="cve-overline">
+            <a href="{{ .CurrentSection.RelPermalink }}">{{ T "cve_section_title" | default "CVE Digest" }}</a>
+          </p>
+          <h1 class="h2 mb-3">
+            {{ .Title }}
+          </h1>
+
+          <ul class="cve-meta-list">
+            {{ with .Params.author }}
+              <li>{{ . }}</li>
+            {{ end }}
+            <li>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format ":date_long" .PublishDate }}</time>
+            </li>
+          </ul>
+
+          <div class="mb-6">
+            {{ partial "components/cve-digest-stats" . }}
+          </div>
+
+          {{ with .Content }}
+            <div class="content mb-4">{{ . }}</div>
+          {{ end }}
+
+          {{ partial "components/cve-digest-table" . }}
+
+          {{ if .Params.cves }}
+            <div class="content mt-6">
+              <h2>{{ T "cve_disclaimer_title" | default "Disclaimer" }}</h2>
+              <p>
+                This page is generated automatically from public sources.
+                Details, scores and affected versions can change: always check the
+                linked advisories before taking action.
+              </p>
+            </div>
+          {{ end }}
+        </article>
+      </div>
+    </div>
+  </section>
+{{ end }}

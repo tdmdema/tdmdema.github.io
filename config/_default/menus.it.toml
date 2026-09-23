@@ -1,0 +1,35 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+weight = 1
+name = "Home"
+url = "/"
+
+[[main]]
+weight = 2
+name = "Oggi"
+url = "/now"
+
+[[main]]
+weight = 3
+name = "Progetti"
+url = "/projects"
+
+[[main]]
+weight = 4
+name = "Blog"
+url = "/blog"
+
+
+# footer menu
+[[footer]]
+name = "About"
+url = "/about"
+weight = 1
+
+
+[[footer]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+weight = 3

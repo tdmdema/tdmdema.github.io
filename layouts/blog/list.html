@@ -1,0 +1,95 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  {{ if eq .Kind "section" }}
+    {{ $cveSection := site.GetPage "/blog/cve" }}
+    {{ $digestCount := 0 }}
+    {{ $totalCves := 0 }}
+    {{ $latest := "" }}
+    {{ if $cveSection }}
+      {{ $digestCount = len $cveSection.RegularPages }}
+      {{ range $cveSection.RegularPages }}
+        {{ $totalCves = add $totalCves (len .Params.cves) }}
+      {{ end }}
+      {{ if gt $digestCount 0 }}
+        {{ $latest = index (sort $cveSection.RegularPages "Date" "desc") 0 }}
+      {{ end }}
+    {{ end }}
+    <section class="section-sm pt-6">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <a class="cve-blog-banner" href="{{ "blog/cve/" | relLangURL }}">
+              <span class="cve-blog-banner-icon" aria-hidden="true">CVE</span>
+              {{ if eq .Language.Lang "it" }}
+                <span class="cve-blog-banner-text">
+                  <strong>Rassegna CVE</strong>
+                  Riepilogo giornaliero delle vulnerabilità pubblicate e sfruttate (CISA KEV / NVD).
+                  <span class="cve-blog-banner-stats">
+                    {{ if gt $digestCount 0 }}
+                      <span class="cve-chip">{{ $digestCount }} {{ if eq $digestCount 1 }}rassegna{{ else }}rassegne{{ end }}</span>
+                      <span class="cve-chip cve-chip-kev">{{ $totalCves }} CVE</span>
+                      <span class="cve-chip">ultima: {{ time.Format "2 January 2006" $latest.Date }}</span>
+                    {{ end }}
+                  </span>
+                </span>
+                <span class="btn btn-outline-primary btn-sm">Apri la rassegna</span>
+              {{ else }}
+                <span class="cve-blog-banner-text">
+                  <strong>CVE Digest</strong>
+                  Daily roundup of disclosed and exploited vulnerabilities (CISA KEV / NVD).
+                  <span class="cve-blog-banner-stats">
+                    {{ if gt $digestCount 0 }}
+                      <span class="cve-chip">{{ $digestCount }} {{ if eq $digestCount 1 }}digest{{ else }}digests{{ end }}</span>
+                      <span class="cve-chip cve-chip-kev">{{ $totalCves }} CVEs</span>
+                      <span class="cve-chip">latest: {{ time.Format "2 January 2006" $latest.Date }}</span>
+                    {{ end }}
+                  </span>
+                </span>
+                <span class="btn btn-outline-primary btn-sm">Open CVE Digest</span>
+              {{ end }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Content }}
+    <section class="section-sm">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="content">{{ . }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <section class="section">
+    <div class="container">
+      <div class="row gx-5">
+        <!-- blog posts -->
+        <div class="lg:col-8">
+          <div class="row">
+            {{ $posts := where .RegularPagesRecursive "CurrentSection.RelPermalink" "ne" (printf "%scve/" .RelPermalink) }}
+            {{ $paginator := .Paginate $posts }}
+            {{ range $paginator.Pages }}
+              <div class="md:col-6 mb-14">
+                {{ partial "components/blog-card" . }}
+              </div>
+            {{ end }}
+          </div>
+          {{ partial "components/pagination.html" . }}
+        </div>
+        <!-- sidebar -->
+        <div class="lg:col-4">
+          <!-- widget -->
+          {{ $widget:= site.Params.widgets.sidebar }}
+          {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

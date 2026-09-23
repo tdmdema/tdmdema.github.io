@@ -1,0 +1,319 @@
+/* Add your own custom styles here */
+
+/* ===================== CVE digest ===================== */
+.cve-overline {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #717171;
+}
+.dark .cve-overline {
+  color: #b4afb6;
+}
+
+.cve-meta-list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  color: #717171;
+  font-size: 0.875rem;
+}
+.dark .cve-meta-list {
+  color: #b4afb6;
+}
+
+/* --- banner linking the blog listing to the CVE digest section --- */
+.cve-blog-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid #fecaca;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff7f7 0%, #ffffff 60%);
+  box-shadow: 0 4px 16px rgba(185, 28, 28, 0.08);
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.dark .cve-blog-banner {
+  border-color: #7f1d1d;
+  background: linear-gradient(135deg, #1c1c1c 0%, #2a1515 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+.cve-blog-banner:hover {
+  border-color: #f87171;
+  box-shadow: 0 8px 28px rgba(185, 28, 28, 0.16);
+  transform: translateY(-2px);
+}
+.dark .cve-blog-banner:hover {
+  border-color: #f87171;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+.cve-blog-banner-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  box-shadow: 0 3px 10px rgba(185, 28, 28, 0.35);
+}
+.dark .cve-blog-banner-icon {
+  background: linear-gradient(135deg, #f87171, #dc2626);
+  color: #fff;
+}
+.cve-blog-banner-text {
+  flex: 1 1 auto;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #444444;
+}
+.dark .cve-blog-banner-text {
+  color: #b4afb6;
+}
+.cve-blog-banner-text strong {
+  display: block;
+  color: #b91c1c;
+  font-size: 1.15rem;
+  margin-bottom: 0.15rem;
+}
+.dark .cve-blog-banner-text strong {
+  color: #fca5a5;
+}
+.cve-blog-banner-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+/* --- severity badges --- */
+.cve-badge {
+  display: inline-block;
+  padding: 0.12em 0.6em;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.badge-sev-critical {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.badge-sev-high {
+  background: #ffedd5;
+  color: #c2410c;
+}
+.badge-sev-medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+.badge-sev-low {
+  background: #dcfce7;
+  color: #15803d;
+}
+.badge-sev-none {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.dark .badge-sev-critical {
+  background: #450a0a;
+  color: #fecaca;
+}
+.dark .badge-sev-high {
+  background: #431407;
+  color: #fed7aa;
+}
+.dark .badge-sev-medium {
+  background: #451a03;
+  color: #fde68a;
+}
+.dark .badge-sev-low {
+  background: #052e16;
+  color: #bbf7d0;
+}
+.dark .badge-sev-none {
+  background: #374151;
+  color: #e5e7eb;
+}
+
+/* --- neutral / kev chips --- */
+.cve-chip {
+  display: inline-block;
+  padding: 0.12em 0.6em;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.cve-chip + .cve-chip,
+.cve-chip + .cve-badge {
+  margin-left: 0.4rem;
+}
+.cve-chip-kev {
+  border-color: #f59e0b;
+  color: #b45309;
+}
+.dark .cve-chip {
+  border-color: #4b5563;
+  color: #b4afb6;
+}
+.dark .cve-chip-kev {
+  border-color: #f59e0b;
+  color: #fbbf24;
+}
+
+/* --- digest table --- */
+.cve-table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.cve-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.cve-table thead th {
+  text-align: left;
+  padding: 0.6rem 0.7rem;
+  border-bottom: 2px solid #eaeaea;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #717171;
+  white-space: nowrap;
+}
+.cve-table tbody td {
+  padding: 0.7rem;
+  border-bottom: 1px solid #eaeaea;
+  vertical-align: top;
+}
+.cve-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.cve-table tbody tr:hover {
+  background: #fafafa;
+}
+.dark .cve-table thead th {
+  border-color: #3e3e3e;
+  color: #b4afb6;
+}
+.dark .cve-table tbody td {
+  border-color: #3e3e3e;
+}
+.dark .cve-table tbody tr:hover {
+  background: #222;
+}
+
+.cve-table .cve-id-cell {
+  white-space: nowrap;
+}
+.cve-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 600;
+}
+.cve-id a {
+  color: inherit;
+  text-decoration: none;
+}
+.cve-id a:hover {
+  text-decoration: underline;
+}
+.cve-table .cve-cvss {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.cve-versions,
+.cve-cwes {
+  margin-top: 0.15rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  color: #717171;
+}
+.dark .cve-versions,
+.dark .cve-cwes {
+  color: #b4afb6;
+}
+.cve-refs a {
+  display: inline-block;
+  margin: 0 0.6rem 0.15rem 0;
+  white-space: nowrap;
+  text-decoration: underline;
+  color: inherit;
+}
+
+/* --- digest cards (section listing) --- */
+.cve-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.dark .cve-card {
+  border-color: #3e3e3e;
+  background: #1c1c1c;
+}
+.cve-card-meta {
+  color: #717171;
+  font-size: 0.82rem;
+}
+.dark .cve-card-meta {
+  color: #b4afb6;
+}
+.cve-card-title {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.cve-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.cve-card-title a:hover {
+  text-decoration: underline;
+}
+.cve-card-summary {
+  flex: 1;
+  margin-bottom: 1rem;
+  color: #444444;
+  font-size: 0.9rem;
+}
+.dark .cve-card-summary {
+  color: #b4afb6;
+}
+.cve-card-footer {
+  margin-top: auto;
+}

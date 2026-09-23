@@ -1,0 +1,46 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  {{ with .Content }}
+    <section class="section-sm">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="content">{{ . }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Pages }}
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          {{ range . }}
+            <div class="md:col-6 mb-14">
+              <div class="bg-body dark:bg-darkmode-body h-full">
+                <h4 class="mb-3">
+                  <a href="{{ .RelPermalink }}">
+                    {{ with .Title }}
+                      {{ . }}
+                    {{ else }}
+                      {{ .File.ContentBaseName | humanize }}
+                    {{ end }}
+                  </a>
+                </h4>
+                {{ with .Summary }}
+                  <p class="mb-6">{{ . | plainify }}</p>
+                {{ end }}
+                <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
+                  {{ T "read_more" | default "Read More" }}
+                </a>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

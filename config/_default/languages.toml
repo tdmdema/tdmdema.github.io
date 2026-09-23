@@ -1,0 +1,13 @@
+################ English language ##################
+[en]
+label = "En"
+locale = "en-us"
+contentDir = "content/english"
+weight = 1
+
+################ Italian language ##################
+[it]
+label = "It"
+locale = "it-it"
+contentDir = "content/italiano"
+weight = 2

@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <section>
+    <div class="container text-center">
+      <div
+        class="from-body to-light dark:from-darkmode-body dark:to-darkmode-light rounded-2xl bg-gradient-to-b px-8 py-14">
+        <p class="cve-overline">{{ T "cve_section_badge" | default "Security" }}</p>
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}
+          <p class="mt-4 text-lg">{{ . }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{ with .Content }}
+    <section class="section-sm">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="content">{{ . }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          {{ $paginator := .Paginate .RegularPages }}
+          <div class="row">
+            {{ range $paginator.Pages }}
+              <div class="md:col-6 mb-8">
+                {{ partial "components/cve-digest-card" . }}
+              </div>
+            {{ end }}
+          </div>
+          {{ partial "components/pagination.html" . }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
