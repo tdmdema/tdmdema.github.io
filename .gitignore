@@ -6,9 +6,11 @@ Thumbs.db
 .sass-cache
 npm-debug.log
 node_modules
+.pnpm-store
 builds
 package-lock.json
 public
+.hugo_build.lock
 resources
 jsconfig.json
 go.sum
