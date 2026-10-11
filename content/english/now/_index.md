@@ -15,6 +15,7 @@ A page to say, without beating around the bush, what I am working on these days.
 ### Projects
 
 - **Homelab**: a Proxmox server with a dedicated firewall (OPNsense), a Docker host full of services and Home Assistant for home automation. It is real infrastructure, a learning lab and my favourite playground at the same time.
+- **Drones**: a new hobby I fell into late in life and I am taking seriously. I got the A1/A3 and A2 licences, bought a BetaFPV Cetus Pro and started flying in the simulator first. ([I wrote about it here](/projects/droni/))
 - **IT consulting**: I am evaluating starting consulting as a side job, to build something of my own and manage my time. I haven't started yet — you need clients, not just intention — but that is the direction. ([I wrote about it here](/projects/consulting/))
 - **This website**: building, writing and automating, in Italian and English.
 

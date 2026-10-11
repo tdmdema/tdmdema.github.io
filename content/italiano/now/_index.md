@@ -15,6 +15,7 @@ Una pagina per dire, senza troppi giri di parole, a cosa sto lavorando in questo
 ### Progetti
 
 - **Homelab**: un server Proxmox con firewall dedicato (OPNsense), un host Docker pieno di servizi e Home Assistant per la domotica. È allo stesso tempo infrastruttura vera, laboratorio di apprendimento e terreno di gioco preferito.
+- **Droni**: un hobby nuovo di cui mi sono innamorato tardi e nel quale mi sto buttando sul serio. Ho preso i patentini A1/A3 e A2, comprato un BetaFPV Cetus Pro e iniziato a pilotare prima in simulatore. ([ne ho scritto qui](/projects/droni/))
 - **Consulenza IT**: sto valutando di iniziare a fare consulenza come side job, per costruire qualcosa di mio e gestire il mio tempo. Non ho ancora iniziato — servono clienti, non solo intenzione — ma la direzione è quella. ([ne ho scritto qui](/projects/consulting/))
 - **Questo sito**: costruzione, contenuti e automazioni, in italiano e inglese.
 
