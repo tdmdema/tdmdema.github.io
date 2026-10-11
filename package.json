@@ -31,6 +31,10 @@
     "tailwind-bootstrap-grid": "^7.0.0",
     "tailwindcss": "^4.3.0"
   },
+  "overrides": {
+    "postcss-selector-parser": ">=7.1.6",
+    "source-map-js": ">=1.2.2"
+  },
   "pnpm": {
     "overrides": {
       "postcss-selector-parser": ">=7.1.6",
