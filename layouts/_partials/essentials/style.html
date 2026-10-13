@@ -1,0 +1,74 @@
+<!-- DNS preconnect -->
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+<!-- google fonts -->
+{{ $pf:= hugo.Data.theme.fonts.font_family.primary }}
+{{ $sf:= hugo.Data.theme.fonts.font_family.secondary }}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family={{$pf | safeURL}}{{with $sf}}&family={{. | safeURL}}{{end}}&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+<!-- main styles -->
+{{ $styles := slice }}
+{{ $stylesLazy := slice }}
+
+{{ range site.Params.plugins.css }}
+  {{ if findRE "^http" .link }}
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="{{ .link | relURL }}"
+      {{ .attributes | safeHTMLAttr }} />
+  {{ else }}
+    {{ if not .lazy }}
+      {{ $styles = $styles | append (resources.Get .link) }}
+    {{ else }}
+      {{ $stylesLazy = $stylesLazy | append (resources.Get .link) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $mainCSS := resources.Get "css/main.css" }}
+{{ $tailwindOpts := dict "inlineImports" true }}
+{{ $tailwindCSS := $mainCSS | css.TailwindCSS $tailwindOpts }}
+
+{{ $styles = $styles | append $tailwindCSS }}
+{{ $styles = $styles | resources.Concat "css/style.css" }}
+
+{{ if hugo.IsProduction }}
+  {{/* hugo --minify does not touch assets: the Tailwind output used to be served
+       unminified, which the render-blocking audit flagged. The lazy bundle was
+       already minified upstream. */}}
+  {{ $styles = $styles | minify | fingerprint }}
+{{ end }}
+
+
+<!-- link main style -->
+<link
+  href="{{ $styles.RelPermalink }}"
+  integrity="{{ $styles.Data.Integrity }}"
+  rel="stylesheet" />
+
+<!-- link lazy style -->
+{{/* empty when no CSS plugin is declared (Font Awesome, Swiper and GLightbox
+     were the only three, and all of them were unused) */}}
+{{ with $stylesLazy }}
+  {{ $lazy := . | resources.Concat "css/style-lazy.css" }}
+  {{ if hugo.IsProduction }}{{ $lazy = $lazy | minify | fingerprint }}{{ end }}
+  <link
+    rel="stylesheet"
+    href="{{ $lazy.RelPermalink }}"
+    integrity="{{ $lazy.Data.Integrity }}"
+    media="print"
+    onload="this.media='all'; this.onload=null;" />
+{{ end }}
