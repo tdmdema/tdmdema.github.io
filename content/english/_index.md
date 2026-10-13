@@ -17,7 +17,7 @@ features:
     dynamic_about: true
     button:
       enable: true
-      label: "Learn more"
+      label: "More about me"
       link: "/about/"
 
   - title: "Technical blog"
