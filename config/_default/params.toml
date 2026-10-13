@@ -22,7 +22,7 @@ mainSections = ["blog"]
 # contact form action
 contact_form_action = "#" # contact form works with [https://airform.io/] or [https://formspree.io]
 # google tag manager, see https://developers.google.com/tag-manager/
-google_tag_manager = "G-8NZ28GDNZC" # example: G-XXXXXXXXXX
+google_tag_manager = "" # left empty on purpose: GA4 is loaded by layouts/_partials/google_analytics.html, only after cookie consent
 google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
