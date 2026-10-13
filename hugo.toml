@@ -1,12 +1,14 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "/"
+baseURL = "https://demarchi.xyz/"
 # Title of your website (required).
 title = "Tommaso De Marchi"
 # Your theme name
 theme = "hugoplate"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "Europe/Rome"
+# generate robots.txt (template in layouts/robots.txt)
+enableRobotsTXT = true
 # post excerpt
 summaryLength = 10 # see https://gohugo.io/content-management/summaries/#automatic-summary
 # disable language
