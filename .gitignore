@@ -12,6 +12,9 @@ package-lock.json
 public
 .hugo_build.lock
 resources
+hugo_stats.json
 jsconfig.json
 go.sum
 yarn.lock
+# Lighthouse leaves its Chrome profile in a Windows-style temp path when TMP is set to one
+C:\\Users*
