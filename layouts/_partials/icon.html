@@ -1,0 +1,31 @@
+{{/*
+  Inline SVG icon.
+
+  Usage:
+    {{ partial "icon" (dict "name" "check" "class" "mr-2") }}
+
+  The site used to load Font Awesome from cdnjs: two webfonts (solid + brands,
+  ~278 KB) plus 37 KB of rules for about 3.600 glyphs, of which ten were in use,
+  and font-display: block on top of that. The icons are now inlined from
+  assets/icons/<name>.svg, so they are crisp at any zoom, cost no request and
+  cannot flash while a font loads. Add a new icon by dropping its SVG there.
+
+  Artwork: Font Awesome Free 6.7.1 (icons: CC BY 4.0,
+  https://fontawesome.com/license/free); the attribution stays here instead of
+  being inlined into every page.
+*/}}
+{{- $name := .name -}}
+{{- $class := .class | default "" | strings.TrimSpace -}}
+{{- with resources.Get (printf "icons/%s.svg" $name) -}}
+  {{- $svg := .Content -}}
+  {{- $svg = replaceRE `\s*width="[^"]*"` "" $svg -}}
+  {{- $svg = replaceRE `\s*height="[^"]*"` "" $svg -}}
+  {{- $attrs := printf `width="1em" height="1em" style="vertical-align:-0.125em" aria-hidden="true" focusable="false" fill="currentColor"` -}}
+  {{- with $class -}}
+    {{- $attrs = printf `class="%s" %s` . $attrs -}}
+  {{- end -}}
+  {{- $svg = replaceRE "<svg" (printf "<svg %s" $attrs) $svg -}}
+  {{- $svg | safeHTML -}}
+{{- else -}}
+  {{- errorf "partial icon: assets/icons/%s.svg not found" $name -}}
+{{- end -}}

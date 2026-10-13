@@ -26,7 +26,7 @@
           </div>
           <div class="col-12">
             {{/* image modules comes from https://github.com/gethugothemes/hugo-modules/tree/master/images */}}
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
+            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "FetchPriority" "high" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
               <ul>
                 {{ range first 3 (site.GetPage "/projects").Pages.ByDate.Reverse }}
                   <li class="relative mb-4 pl-6">
-                    <i class="fa fa-check absolute left-0 top-1.5"></i>
+                    {{ partial "icon" (dict "name" "check" "class" "absolute left-0 top-1.5") }}
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                   </li>
                 {{ end }}
@@ -78,7 +78,7 @@
                 {{ $blogPosts := where $blog.RegularPagesRecursive "CurrentSection.RelPermalink" "ne" (printf "%scve/" $blog.RelPermalink) }}
                 {{ range first 3 $blogPosts.ByDate.Reverse }}
                   <li class="relative mb-4 pl-6">
-                    <i class="fa fa-check absolute left-0 top-1.5"></i>
+                    {{ partial "icon" (dict "name" "check" "class" "absolute left-0 top-1.5") }}
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                   </li>
                 {{ end }}
@@ -88,7 +88,7 @@
                 <ul>
                   {{ range . }}
                     <li class="relative mb-4 pl-6">
-                      <i class="fa fa-check absolute left-0 top-1.5"></i>
+                      {{ partial "icon" (dict "name" "check" "class" "absolute left-0 top-1.5") }}
                       {{ . | markdownify }}
                     </li>
                   {{ end }}
@@ -99,7 +99,7 @@
               {{ if .enable }}
                 <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
                   {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
+                  {{ partial "icon" (dict "name" "arrow-right" "class" "pl-2") }}
                 </a>
               {{ end }}
             {{ end }}

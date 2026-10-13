@@ -2,17 +2,17 @@
   "main": [
     {
       "name": "facebook",
-      "icon": "fab fa-facebook",
+      "icon": "facebook",
       "link": "https://www.facebook.com/tommaso.demarchi"
     },
     {
       "name": "github",
-      "icon": "fab fa-github",
+      "icon": "github",
       "link": "https://github.com/tdmdema"
     },
     {
       "name": "linkedin",
-      "icon": "fab fa-linkedin",
+      "icon": "linkedin",
       "link": "https://www.linkedin.com/in/tommaso-de-marchi/"
     }
   ]
